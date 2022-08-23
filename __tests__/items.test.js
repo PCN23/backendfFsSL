@@ -91,6 +91,7 @@ describe('items', () => {
     const resp = await agent
       .put(`/api/v1/items/${item.id}`)
       .send({ bought: true });
+    
     expect(resp.status).toBe(200);
     expect(resp.body).toEqual({ ...item, bought: true });
   });
